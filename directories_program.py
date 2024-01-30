@@ -97,19 +97,6 @@ def move(curr, name):
             return move(curr.left, name)
     return curr
 
-
-    """
-    if curr.left != None:
-        if curr.left.name == dir:
-            return curr.left
-    if curr.right != None:
-        if curr.right.name == dir:
-            return curr.right
-    else:
-        print("  No folder with that name exists")
-        return curr
-"""
-
 def move_back(root, curr):
     if root.left != None:
         if root.left == curr:
@@ -142,7 +129,6 @@ def mmove_back(root, curr):
         if root.left is not None:
             return move_back(root.left, curr)
     
-    #return curr
 
 def sort(root):
     # Traverse / In-Order
@@ -153,28 +139,7 @@ def sort(root):
         print(root.name)
 
         sort(root.right)
-
-    
-
-
-
-
-
-    
-
-
-
-'''
-Note that all the "if False" and "if True" are simply there to
-give you the correct success and error message formats.
-You can use if sentences or try catch or any other
-means of programming you control flow.
-You can make an encapsulting class for everything and start with that,
-rather than starting with the single TreeNode("root").
-Just make sure the input and output of the program is exactly as
-specified and fits with the  expected_out.txt when the tester
-program is run with the original commands.txt.
-Then feel free to make your own, more extensive tests.'''
+        
 
 def run_commands_on_tree(tree):
     print("  current directory: " + tree.name)
@@ -189,7 +154,7 @@ def run_commands_on_tree(tree):
         elif command[0] == "ls":
             print("current directory: " + current.name)
             print("  Listing the contents of current directory, " + current.name)
-            ls_print(current, current) # Add the name of the directory here
+            ls_print(current, current) 
 
         elif command[0] == "cd":
             print("  switching to directory " + command[1])
@@ -225,8 +190,6 @@ def run_commands_on_tree(tree):
 
 
 def run_directories_program():
-    # YOU CAN CHANGE THE WHOLE THING IF YOU LIKE!!
-    # YOU CAN DESIGN THIS DIFFERENTLY IF IT SUITS YOU
     run_commands_on_tree(TreeNode("root"))
 
 if __name__ == "__main__":
